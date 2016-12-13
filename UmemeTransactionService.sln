@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmemeTransactionService", "UmemeTransactionService\UmemeTransactionService.csproj", "{1EA936AA-5756-4AD1-953D-FF9DF9A6443B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UmemeOfflineSender", "..\UmemeOfflineSender\UmemeOfflineSender\UmemeOfflineSender.csproj", "{4BDA48DF-4013-47A6-93BD-E2EC72E4775C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1EA936AA-5756-4AD1-953D-FF9DF9A6443B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA936AA-5756-4AD1-953D-FF9DF9A6443B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA936AA-5756-4AD1-953D-FF9DF9A6443B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA936AA-5756-4AD1-953D-FF9DF9A6443B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BDA48DF-4013-47A6-93BD-E2EC72E4775C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BDA48DF-4013-47A6-93BD-E2EC72E4775C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BDA48DF-4013-47A6-93BD-E2EC72E4775C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BDA48DF-4013-47A6-93BD-E2EC72E4775C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

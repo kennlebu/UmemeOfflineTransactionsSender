@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://UmemeEPayment/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://UmemeEPayment/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://UmemeEPayment/">
+      <s:element name="GetTransactionDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vendorTranID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransactionDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransactionDetailsResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Response">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetServerStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetServerStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vendorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateCustomerResult" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Balance" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Credit" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostUmemePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:Transaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Transaction">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TranId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigitalSignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Teller" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranNarration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorTranId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranIdToReverse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reversal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Offline" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostUmemePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostUmemePaymentResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostYakaPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:Transaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostYakaPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostYakaPaymentResult" type="tns:Token" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Token">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RemainingCredit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LifeLine" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceFee" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PayAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DebtRecovery" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Units" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TokenValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inflation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fx" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fuel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrepaidToken" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostBankUmemePayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="trans" type="tns:Transaction" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostBankUmemePaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostBankUmemePaymentResult" type="tns:Response" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTransactionDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTransactionDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransactionDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetServerStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostUmemePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:PostUmemePayment" />
+  </wsdl:message>
+  <wsdl:message name="PostUmemePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:PostUmemePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostYakaPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:PostYakaPayment" />
+  </wsdl:message>
+  <wsdl:message name="PostYakaPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:PostYakaPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostBankUmemePaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:PostBankUmemePayment" />
+  </wsdl:message>
+  <wsdl:message name="PostBankUmemePaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:PostBankUmemePaymentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EPaymentSoap">
+    <wsdl:operation name="GetTransactionDetails">
+      <wsdl:input message="tns:GetTransactionDetailsSoapIn" />
+      <wsdl:output message="tns:GetTransactionDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <wsdl:input message="tns:GetServerStatusSoapIn" />
+      <wsdl:output message="tns:GetServerStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomer">
+      <wsdl:input message="tns:ValidateCustomerSoapIn" />
+      <wsdl:output message="tns:ValidateCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostUmemePayment">
+      <wsdl:input message="tns:PostUmemePaymentSoapIn" />
+      <wsdl:output message="tns:PostUmemePaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostYakaPayment">
+      <wsdl:input message="tns:PostYakaPaymentSoapIn" />
+      <wsdl:output message="tns:PostYakaPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostBankUmemePayment">
+      <wsdl:input message="tns:PostBankUmemePaymentSoapIn" />
+      <wsdl:output message="tns:PostBankUmemePaymentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EPaymentSoap" type="tns:EPaymentSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTransactionDetails">
+      <soap:operation soapAction="http://UmemeEPayment/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <soap:operation soapAction="http://UmemeEPayment/GetServerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomer">
+      <soap:operation soapAction="http://UmemeEPayment/ValidateCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostUmemePayment">
+      <soap:operation soapAction="http://UmemeEPayment/PostUmemePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostYakaPayment">
+      <soap:operation soapAction="http://UmemeEPayment/PostYakaPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostBankUmemePayment">
+      <soap:operation soapAction="http://UmemeEPayment/PostBankUmemePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EPaymentSoap12" type="tns:EPaymentSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTransactionDetails">
+      <soap12:operation soapAction="http://UmemeEPayment/GetTransactionDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <soap12:operation soapAction="http://UmemeEPayment/GetServerStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomer">
+      <soap12:operation soapAction="http://UmemeEPayment/ValidateCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostUmemePayment">
+      <soap12:operation soapAction="http://UmemeEPayment/PostUmemePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostYakaPayment">
+      <soap12:operation soapAction="http://UmemeEPayment/PostYakaPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostBankUmemePayment">
+      <soap12:operation soapAction="http://UmemeEPayment/PostBankUmemePayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EPayment">
+    <wsdl:port name="EPaymentSoap" binding="tns:EPaymentSoap">
+      <soap:address location="https://41.84.196.234:4044/umemebillinterface/Epayment.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EPaymentSoap12" binding="tns:EPaymentSoap12">
+      <soap12:address location="https://41.84.196.234:4044/umemebillinterface/Epayment.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
