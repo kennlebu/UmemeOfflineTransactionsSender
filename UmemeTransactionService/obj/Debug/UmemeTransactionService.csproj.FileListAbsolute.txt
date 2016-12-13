@@ -1,0 +1,8 @@
+C:\Users\Kenneth.Lebu\documents\visual studio 2015\Projects\UmemeTransactionService\UmemeTransactionService\bin\Debug\UmemeTransactionService.exe.config
+C:\Users\Kenneth.Lebu\documents\visual studio 2015\Projects\UmemeTransactionService\UmemeTransactionService\bin\Debug\UmemeTransactionService.exe
+C:\Users\Kenneth.Lebu\documents\visual studio 2015\Projects\UmemeTransactionService\UmemeTransactionService\bin\Debug\UmemeTransactionService.pdb
+C:\Users\Kenneth.Lebu\documents\visual studio 2015\Projects\UmemeTransactionService\UmemeTransactionService\obj\Debug\UmemeTransactionService.ProjectInstaller.resources
+C:\Users\Kenneth.Lebu\documents\visual studio 2015\Projects\UmemeTransactionService\UmemeTransactionService\obj\Debug\UmemeTransactionService.csproj.GenerateResource.Cache
+C:\Users\Kenneth.Lebu\documents\visual studio 2015\Projects\UmemeTransactionService\UmemeTransactionService\obj\Debug\UmemeTransactionService.exe
+C:\Users\Kenneth.Lebu\documents\visual studio 2015\Projects\UmemeTransactionService\UmemeTransactionService\obj\Debug\UmemeTransactionService.pdb
+C:\Users\Kenneth.Lebu\documents\visual studio 2015\Projects\UmemeTransactionService\UmemeTransactionService\obj\Debug\UmemeTransactionService.csprojResolveAssemblyReference.cache
